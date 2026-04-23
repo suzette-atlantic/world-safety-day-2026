@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Beyond Compliance | World-Class Safety Culture Playbook</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+<style>
+:root {
+--atlantic-deep-blue: #374a9e;
+--atlantic-teal: #3ac4de;
+--atlantic-gradient: linear-gradient(90deg, var(--atlantic-deep-blue) 0%, var(--atlantic-teal) 100%);
+--text-dark: #1d1d1f;
+--text-light: #ffffff;
+--bg-light: #f9f9fb;
+--white: #ffffff;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+font-family: "Figtree", sans-serif;
+color: var(--text-dark);
+line-height: 1.6;
+background-color: var(--white);
+-webkit-font-smoothing: antialiased;
+overflow-x: hidden;
+}
+@keyframes shine { to { background-position: 200% center; } }
+.reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s ease-out; }
+.reveal.active { opacity: 1; transform: translateY(0); }
+header {
+background: rgba(255, 255, 255, 0.9);
+backdrop-filter: blur(10px);
+padding: 20px 0;
+box-shadow: 0 2px 15px rgba(0, 0, 0, 0.03);
+position: sticky;
+top: 0;
+z-index: 1000;
+}
+.header-content {
+max-width: 1100px;
+margin: 0 auto;
+padding: 0 24px;
+display: flex;
+align-items: center;
+justify-content: space-between;
+}
+.logo {
+font-size: 22px;
+font-weight: 900;
+letter-spacing: 0.5px;
+color: var(--atlantic-deep-blue);
+text-decoration: none;
+}
+.header-cta {
+background: var(--atlantic-gradient);
+color: white;
+padding: 10px 24px;
+border-radius: 50px;
+text-decoration: none;
+font-weight: 700;
+font-size: 14px;
+display: none;
+}
+@media (min-width: 768px) { .header-cta { display: inline-block; } }
+.container {
+max-width: 1100px;
+margin: 0 auto;
+padding: 0 24px;
+position: relative;
+z-index: 2;
+}
+section { padding: 100px 0; position: relative; }
+h1, h2, h3 { font-weight: 800; line-height: 1.1; letter-spacing: -0.02em; }
+.eyebrow {
+text-transform: uppercase;
+font-weight: 800;
+font-size: 14px;
+letter-spacing: 1.5px;
+color: var(--atlantic-teal);
+margin-bottom: 16px;
+display: block;
+}
+.btn-large {
+display: inline-block;
+background: var(--atlantic-gradient);
+color: white;
+padding: 18px 40px;
+border-radius: 50px;
+text-decoration: none;
+font-weight: 800;
+font-size: 18px;
+transition: all 0.3s ease;
+box-shadow: 0 10px 30px rgba(58, 196, 222, 0.4);
+}
+.btn-large:hover { transform: translateY(-2px); box-shadow: 0 15px 40px rgba(58, 196, 222, 0.6); }
+.hero-title-band { background-color: #ffffff; padding: 60px 0 56px; text-align: center; }
+.hero-title-band .eyebrow { color: #000; font-size: 18px; margin-bottom: 20px; }
+.hero-title-band h1 { font-size: 52px; max-width: 980px; margin: 0 auto; }
+.hero-title-band h1 span {
+background: linear-gradient(90deg, #374a9e 0%, #3ac4de 50%, #374a9e 100%);
+background-size: 200% auto;
+-webkit-background-clip: text;
+background-clip: text;
+-webkit-text-fill-color: transparent;
+display: inline-block;
+animation: shine 5s linear infinite;
+}
+.hero {
+background-color: #000;
+background-image: radial-gradient(ellipse at 50% 40%, rgba(58, 196, 222, 0.15) 0%, rgba(55, 74, 158, 0.08) 40%, transparent 70%);
+padding: 80px 0 100px;
+position: relative;
+}
+.hero-cinematic {
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: 60px;
+align-items: center;
+}
+.hero-copy .subhead {
+font-size: 20px;
+font-weight: 700;
+color: var(--atlantic-teal);
+margin-bottom: 20px;
+line-height: 1.4;
+}
+.hero-copy p { font-size: 17px; color: #b0b3c0; line-height: 1.7; }
+.hero-copy p + p { margin-top: 14px; }
+.pain-list { list-style: none; padding: 0; margin: 20px 0 0; }
+.pain-list li {
+font-size: 16px;
+color: #b0b3c0;
+line-height: 1.7;
+padding: 6px 0 6px 28px;
+position: relative;
+}
+.pain-list li::before {
+content: "";
+position: absolute;
+left: 0;
+top: 13px;
+width: 8px;
+height: 8px;
+border-radius: 50%;
+background: var(--atlantic-teal);
+}
+.hero-form-wrap {
+background: rgba(255, 255, 255, 0.06);
+border: 1px solid rgba(255, 255, 255, 0.1);
+border-radius: 16px;
+padding: 36px 30px;
+backdrop-filter: blur(12px);
+}
+.hero-form-wrap h3 { color: var(--text-light); font-size: 22px; margin-bottom: 8px; text-align: center; }
+.hero-form-wrap .hero-form-sub { color: #b0b3c0; font-size: 14px; text-align: center; margin-bottom: 24px; }
+.hubspot-placeholder {
+min-height: 280px;
+border: 1px dashed rgba(255, 255, 255, 0.45);
+border-radius: 12px;
+display: flex;
+align-items: center;
+justify-content: center;
+text-align: center;
+padding: 20px;
+color: rgba(255, 255, 255, 0.75);
+font-size: 15px;
+}
+.grid-section { background-color: var(--bg-light); }
+.grid-section .section-intro { text-align: center; max-width: 860px; margin: 0 auto 60px; }
+.grid-section .section-intro p { font-size: 17px; color: #555; line-height: 1.7; margin-top: 16px; }
+.grid {
+display: grid;
+grid-template-columns: repeat(2, minmax(0, 1fr));
+gap: 24px;
+max-width: 980px;
+margin: 0 auto;
+}
+.card {
+background: var(--white);
+padding: 34px 28px;
+border-radius: 16px;
+box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+border: 1px solid rgba(58, 196, 222, 0.15);
+}
+.card h3 { font-size: 20px; margin-bottom: 10px; color: var(--atlantic-deep-blue); }
+.card p { font-size: 15px; color: #555; line-height: 1.6; }
+.article-section { background-color: var(--bg-light); padding: 100px 0; }
+.article-section h2 { font-size: 38px; text-align: center; margin-bottom: 24px; }
+.article-card {
+display: grid;
+grid-template-columns: 1fr 1fr;
+background: var(--white);
+border-radius: 16px;
+box-shadow: 0 10px 40px rgba(0, 0, 0, 0.06);
+overflow: hidden;
+max-width: 1000px;
+margin: 0 auto;
+}
+.article-thumb { min-height: 320px; }
+.article-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.article-body { padding: 40px 36px; }
+.article-meta { font-size: 13px; text-transform: uppercase; font-weight: 700; color: var(--atlantic-deep-blue); letter-spacing: 1px; margin-bottom: 12px; }
+.article-body h3 { font-size: 30px; margin-bottom: 16px; line-height: 1.2; }
+.article-body p { color: #444; margin-bottom: 14px; }
+.article-link {
+display: inline-block;
+margin-top: 8px;
+color: var(--atlantic-deep-blue);
+font-weight: 800;
+text-decoration: none;
+}
+.article-link:hover { text-decoration: underline; }
+.lifeline-section {
+background: #111;
+color: var(--text-light);
+text-align: center;
+padding: 90px 0;
+}
+.lifeline-section h2 { font-size: 42px; margin-bottom: 12px; color: #fff; }
+.lifeline-section p { max-width: 760px; margin: 0 auto 14px; color: rgba(255, 255, 255, 0.9); font-size: 18px; }
+.lifeline-highlight {
+display: inline-block;
+margin-top: 10px;
+font-size: 22px;
+font-weight: 800;
+letter-spacing: 0.5px;
+color: #3ac4de;
+}
+@media (max-width: 960px) {
+.hero-title-band h1 { font-size: 38px; }
+.hero-cinematic { grid-template-columns: 1fr; }
+.article-card { grid-template-columns: 1fr; }
+.header-content { justify-content: center; }
+.header-cta { display: none; }
+}
+@media (max-width: 700px) {
+section { padding: 70px 0; }
+.hero-title-band h1 { font-size: 30px; }
+.grid { grid-template-columns: 1fr; }
+.article-body h3 { font-size: 24px; }
+.lifeline-section h2 { font-size: 30px; }
+.lifeline-section p { font-size: 16px; }
+}
+</style>
+</head>
+<body>
+<header>
+<div class="header-content">
+<a href="#" class="logo" aria-label="Atlantic Training">ATLANTIC TRAINING</a>
+<a href="#download" class="header-cta">Get the Free Playbook</a>
+</div>
+</header>
+
+<section class="hero-title-band reveal">
+<div class="container">
+<span class="eyebrow">Free safety culture playbook</span>
+<h1><span>Stop Counting "Days Since Last Accident." Start Preventing Them.</span></h1>
+<p style="font-size: 22px; max-width: 920px; margin: 24px auto 16px; color: #555; line-height: 1.5; font-weight: 400;">Compliance is what you do when the OSHA inspector is watching. Culture is what your team does at 2:00 AM on a Tuesday.</p>
+<p style="font-size: 20px; max-width: 920px; margin: 0 auto 32px; color: var(--atlantic-deep-blue); line-height: 1.5; font-weight: 700;">Download <em>Beyond Compliance: The Playbook for a World-Class Safety Culture</em> to bridge the gap between global standards and local impact.</p>
+<a href="#download" class="btn-large">Get the Free Playbook</a>
+</div>
+</section>
+
+<section class="hero">
+<div class="container hero-cinematic reveal">
+<div class="hero-left">
+<div class="hero-copy">
+<p class="subhead">What's Inside the Playbook?</p>
+<p>If your safety program starts and ends with OSHA minimums, you are playing defense. This 8-page, no-BS guide is built for EHS pros, HR leaders, and Operations managers ready to go on the offensive.</p>
+<ul class="pain-list">
+<li>The Baseline Framework: Why universal standards like ISO 45001 move teams from reactive to proactive.</li>
+<li>Bridging the Gaps: Practical ways to handle language barriers, local regulations, and authority dynamics.</li>
+<li>Ditching the Sign: Why "days since last accident" is toxic and which leading indicators to track instead.</li>
+</ul>
+<p style="margin-top: 20px;">Use this playbook to turn policy into behavior and build a safety culture that performs when nobody is watching.</p>
+</div>
+</div>
+<div class="hero-form-wrap" id="download">
+<h3>Grab Your Copy Now</h3>
+<p class="hero-form-sub">Fill out the form below for instant access.</p>
+<div class="hubspot-placeholder">
+<div>
+<strong>HubSpot Form Placeholder</strong><br>
+Insert your HubSpot embed code here.
+</div>
+</div>
+<p class="hero-form-sub" style="margin-top: 18px;">Your data is safe with us. We only send you the good stuff - no spam, just world-class safety resources.</p>
+</div>
+</div>
+</section>
+
+<section class="grid-section">
+<div class="container">
+<div class="section-intro reveal">
+<span class="eyebrow">Sneak Peek</span>
+<h2>Here Is What You Will Learn to Tackle</h2>
+<p>These are the core shifts that help teams stop reacting to incidents and start preventing them by design.</p>
+</div>
+<div class="grid">
+<div class="card reveal">
+<h3>The Baseline Framework</h3>
+<p>Use global standards like ISO 45001 to build a consistent foundation for proactive safety decisions across teams and sites.</p>
+</div>
+<div class="card reveal">
+<h3>Bridging the Gaps</h3>
+<p>Address language, regulatory complexity, and local cultural barriers with practical strategies your frontline can actually use.</p>
+</div>
+<div class="card reveal">
+<h3>Ditching the Sign</h3>
+<p>Replace lagging vanity metrics with leading indicators that reveal risk early and drive better behavior before incidents happen.</p>
+</div>
+<div class="card reveal">
+<h3>Offensive Safety Culture</h3>
+<p>Shift from inspection-ready compliance to resilient culture where workers speak up, intervene, and protect each other in real time.</p>
+</div>
+</div>
+</div>
+</section>
+
+<section class="article-section">
+<div class="container reveal">
+<h2>World Safety Day 2026: Psychosocial Hazards &amp; Safety Culture</h2>
+<div class="article-card">
+<div class="article-thumb">
+<img src="Screenshot 2026-04-23 145958.png" alt="World Safety Day 2026 article cover image">
+</div>
+<div class="article-body">
+<p class="article-meta">April 22, 2026 | Safety Culture</p>
+<h3>Psychosocial hazards are now a frontline safety issue</h3>
+<p>As World Safety Day 2026 approaches, the focus is expanding beyond physical hazards to include chronic stress, burnout, and workplace culture as direct safety risks.</p>
+<p>This preview explores why global standards now emphasize healthy psychosocial work environments and how EHS and HR leaders can translate that into measurable local impact.</p>
+<a class="article-link" href="https://www.atlantictraining.com/blog/world-safety-day-2026/" target="_blank" rel="noopener noreferrer">Read the full blog here</a>
+</div>
+</div>
+</div>
+</section>
+
+<section class="lifeline-section">
+<div class="container reveal">
+<h2>Ready to Upgrade Your Safety Culture?</h2>
+<p>Move from minimum compliance to high-trust, high-performance safety leadership.</p>
+<span class="lifeline-highlight">Global standards. Local impact.</span>
+<p style="margin-top: 24px;"><a href="#download" class="btn-large">Get the Free Playbook</a></p>
+</div>
+</section>
+
+<script>
+function reveal() {
+var reveals = document.querySelectorAll(".reveal");
+for (var i = 0; i < reveals.length; i++) {
+var windowHeight = window.innerHeight;
+var elementTop = reveals[i].getBoundingClientRect().top;
+var elementVisible = 150;
+if (elementTop < windowHeight - elementVisible) {
+reveals[i].classList.add("active");
+}
+}
+}
+window.addEventListener("scroll", reveal);
+reveal();
+</script>
+</body>
+</html>
